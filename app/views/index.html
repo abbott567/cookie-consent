@@ -10,35 +10,70 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
+        How we use cookies
+      </h1>
       <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+        A cookie is a small file which we store on your device for a short time to make this service work.
       </p>
 
       <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+        We use cookies that are:
       </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
+        <li>essential - these make the service work, for example by remembering your answers to certain questions</li>
+        <li>optional - these will not stop the service from working, but will give us information to help us make it better</li>
       </ul>
+
+      <p>
+        We will not:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>use any essential cookies until you use the service</li>
+        <li>use any optional cookies unless you tell us we can</li>
+        <li>be able identify you through using cookies</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Optional cookie settings</h2>
+
+      <p>
+        You can change the settings on this page at any time.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Analytics cookies
+      </h3>
+
+      <p>
+        We use analytics software to get information about how you use this service and help us make it better.
+      </p>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "analytics-cookie",
+        name: "analytics-cookie",
+        fieldset: {
+          legend: {
+            text: "Can we use analytics cookies to help us improve this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
     </div>
-</div>
+  </div>
 
 {% endblock %}
